@@ -10,6 +10,8 @@ h1 {
     padding: 20px;
     color: whitesmoke;
     font-family: 'Georgia', serif; /* Font for heading */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in; /* Fade-in effect */
 }
 
 .slider {
@@ -49,6 +51,13 @@ h1 {
     font-size: 16px;
     color: whitesmoke;
     font-family: 'Tahoma', sans-serif; /* Changed font for description */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in; /* Fade-in effect */
+}
+
+/* Add this class to trigger the fade-in animation */
+.fade-in {
+    opacity: 1; /* Fully visible */
 }
 
 .active {
@@ -59,19 +68,22 @@ h1 {
     cursor: pointer;
     position: absolute;
     top: 50%;
+    transform: translateY(-50%); /* Center vertically */
     padding: 16px;
-    margin-top: -22px;
     color: rgba(71, 138, 104, 0.842);
     font-weight: bold;
     font-size: 24px;
-    border-radius: 0 3px 3px 0;
+    border-radius: 3px;
     background-color: rgba(0, 0, 0, 0.5);
     user-select: none;
 }
 
+.prev {
+    left: 10px; /* Align to the left */
+}
+
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 10px; /* Align to the right */
 }
 
 .dots {
